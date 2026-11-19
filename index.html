@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cauã Botelho | Seguro de Vida &amp; Carreira</title>
+<meta name="description" content="Proteja quem você ama com Seguro de Vida e construa sua própria renda trabalhando com Cauã Botelho, CEO da Vantage Capital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080a;
+  --bg-2:#111114;
+  --line:rgba(232,184,74,.22);
+  --line-soft:rgba(255,255,255,.1);
+  --gold:#e8b84a;
+  --gold-2:#f6d27a;
+  --gold-3:#c18f2c;
+  --text:#f4f1ea;
+  --muted:#b9b4aa;
+  --grad:linear-gradient(135deg,#f8d98a 0%,#e8b84a 45%,#c18f2c 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.08;letter-spacing:-.01em}
+.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.kicker{font-family:Montserrat,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.kicker.white{color:var(--text)}
+.kicker .dot{color:var(--gold);margin:0 .7em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:Montserrat,sans-serif;font-weight:700;font-size:.95rem;padding:.95em 1.5em;border-radius:10px;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn-gold{background:var(--grad);color:#1a1205;box-shadow:0 8px 30px -10px rgba(232,184,74,.6)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(232,184,74,.75)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.85);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--gold);color:var(--gold);padding:.6em 1.1em;font-size:.9rem}
+.btn-line:hover{background:var(--gold);color:#1a1205}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(8,8,10,.88);backdrop-filter:blur(12px);border-color:var(--line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.mono{width:48px;height:48px;flex:none}
+.brand b{display:block;font-family:Montserrat,sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:.02em;line-height:1}
+.brand small{display:block;color:var(--gold);font-size:.78rem;margin-top:4px}
+.links{display:flex;gap:34px;font-size:.92rem;font-weight:500}
+.links a{position:relative;padding:6px 0;color:#e9e5dc}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
+.links a:hover::after,.links a.active::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:#fff;width:44px;height:44px}
+
+/* hero */
+.hero{position:relative;min-height:min(100vh,860px);display:flex;align-items:center;overflow:hidden;padding:120px 0 70px}
+.hero-photo{position:absolute;inset:0 0 0 auto;width:62%;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;filter:contrast(1.05) saturate(.9) brightness(.85)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(8,8,10,.75) 22%,rgba(8,8,10,.1) 55%,rgba(8,8,10,.35) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 30%)}
+.hero-crest{position:absolute;right:max(16px,calc((100vw - 1240px)/2));top:110px;z-index:2;text-align:center;opacity:.95}
+.hero-crest svg{width:92px;height:auto;margin:0 auto 6px}
+.hero-crest .v{font-family:Montserrat,sans-serif;font-weight:600;font-size:1.9rem;letter-spacing:.06em;color:#e7e2d7}
+.hero-crest .c{font-size:.9rem;letter-spacing:.42em;color:#cfc8b8;margin-top:2px}
+.hero-inner{position:relative;z-index:2;max-width:620px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);font-weight:600;margin:22px 0 22px}
+.hero h1 .gold{font-weight:800}
+.hero p.lead{color:#e3dfd6;font-size:1.08rem;max-width:520px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 40px}
+.pillars{display:flex;flex-wrap:wrap;gap:30px}
+.pillar{display:flex;align-items:center;gap:12px;font-size:.88rem;color:#ddd8ce;line-height:1.3}
+.pillar svg{width:30px;height:30px;color:var(--gold);flex:none}
+
+/* split sections */
+.split{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:520px;border-top:1px solid var(--line);overflow:hidden}
+.split .media{position:relative;min-height:340px}
+.split .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.seguro .media{clip-path:polygon(0 0,100% 0,82% 100%,0 100%);margin-right:-12%}
+.seguro .media img{object-position:50% 40%}
+.seguro .body{padding:64px max(16px,calc((100vw - 1240px)/2)) 64px 9%;display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center;position:relative;z-index:1}
+.body h2{font-size:clamp(1.9rem,3.3vw,2.7rem);font-weight:700;margin:12px 0 16px}
+.body p{color:var(--muted)}
+.checks{list-style:none;margin-top:22px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:center;color:#e6e2d9;font-size:.95rem}
+.checks svg{width:22px;height:22px;color:var(--gold);flex:none}
+.side-card{border-left:1px solid var(--line);padding-left:36px}
+.side-card svg{width:52px;height:52px;color:var(--gold)}
+.side-card h3{font-size:1.4rem;font-weight:600;margin:18px 0 26px;line-height:1.25}
+.seguro::before,.time::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 80% 0%,rgba(232,184,74,.08),transparent 60%);pointer-events:none}
+
+.time{grid-template-columns:1.25fr 1fr}
+.time .body{padding:64px 40px 64px max(16px,calc((100vw - 1240px)/2));display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:1}
+.time .body .intro{padding-right:36px;border-right:1px solid var(--line)}
+.time .media{clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);margin-left:-14%}
+.time .media img{object-position:50% 35%}
+.time .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,transparent 35%)}
+.feats{display:grid;gap:22px}
+.feat{display:flex;gap:16px;align-items:center;color:#e6e2d9;font-size:.95rem;line-height:1.35}
+.feat svg{width:34px;height:34px;color:var(--gold);flex:none}
+.feat small{display:block;color:var(--muted);font-size:.86rem}
+.intro .btn{margin-top:26px}
+
+/* sobre */
+.sobre{padding:100px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+.sobre .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.sobre .photo{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line)}
+.sobre .photo img{width:100%;height:100%;object-fit:cover}
+.sobre .photo .tag{position:absolute;left:16px;bottom:16px;background:rgba(8,8,10,.8);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.85rem}
+.sobre .tag b{color:var(--gold);font-family:Montserrat,sans-serif}
+.sobre h2{font-size:clamp(1.9rem,3.3vw,2.7rem);font-weight:700;margin:12px 0 20px}
+.sobre p{color:var(--muted);margin-bottom:14px;max-width:560px}
+.stats{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px}
+.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:rgba(255,255,255,.02)}
+.stat b{display:block;font-family:Montserrat,sans-serif;font-size:1.9rem;font-weight:800}
+.stat span{color:var(--muted);font-size:.86rem}
+
+/* resultados */
+.resultados{padding:90px 0;border-top:1px solid var(--line);text-align:center;position:relative}
+.resultados::before{content:"";position:absolute;left:0;right:0;top:0;height:220px;background:radial-gradient(50% 100% at 50% 0%,rgba(232,184,74,.1),transparent);pointer-events:none}
+.resultados h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:700}
+.resultados .sub{color:#d9d4ca;margin-top:10px}
+.carousel{position:relative;margin-top:44px;display:flex;align-items:center;gap:16px}
+.track-wrap{overflow:hidden;flex:1}
+.track{display:flex;gap:20px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card{flex:0 0 calc((100% - 40px)/3);text-align:left;border:1px solid var(--line-soft);border-radius:14px;padding:24px 26px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+.card .who{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-family:Montserrat,sans-serif;font-weight:700;color:#1a1205;background:var(--grad);flex:none}
+.card b{font-family:Montserrat,sans-serif;font-size:.98rem}
+.stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.card p{color:#e1ddd4;font-size:.95rem}
+.arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);background:none;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;transition:.2s}
+.arrow:hover{border-color:var(--gold);color:var(--gold)}
+.arrow svg{width:18px;height:18px}
+.dots{display:flex;justify-content:center;gap:12px;margin-top:26px}
+.dots button{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;background:none;cursor:pointer;padding:0}
+.dots button.on{background:var(--gold);border-color:var(--gold)}
+
+/* final */
+.final{position:relative;min-height:520px;display:flex;align-items:center;border-top:1px solid var(--line);overflow:hidden}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 60%}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,10,.15) 0%,rgba(8,8,10,.55) 45%,rgba(8,8,10,.88) 100%),linear-gradient(0deg,rgba(8,8,10,.6),transparent 40%)}
+.final .wrap{position:relative;z-index:2;display:flex;justify-content:flex-end}
+.final .box{max-width:560px;padding:80px 0}
+.final h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:500;line-height:1.25}
+.final h2 .gold{font-weight:800}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:46px 0 34px;background:#050506}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:center}
+.foot nav{display:flex;flex-wrap:wrap;gap:22px;color:var(--muted);font-size:.9rem}
+.foot nav a:hover{color:var(--gold)}
+.copy{color:#77736b;font-size:.8rem;margin-top:28px;text-align:center}
+
+/* floating whatsapp */
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(232,184,74,.6);transition:transform .2s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:28px;height:28px;color:#1a1205}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1080px){
+  .links{gap:22px}
+  .card{flex-basis:calc((100% - 20px)/2)}
+}
+@media (max-width:1220px){
+  .seguro .body{grid-template-columns:1fr;gap:30px}
+  .side-card{border-left:0;border-top:1px solid var(--line);padding:26px 0 0}
+  .time .body{grid-template-columns:1fr}
+  .time .body .intro{border-right:0;padding-right:0;border-bottom:1px solid var(--line);padding-bottom:30px}
+  .feats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .links,.nav .btn-line{display:none}
+  .menu-btn{display:grid;place-items:center}
+  header.open .links{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:rgba(8,8,10,.97);border-bottom:1px solid var(--line);padding:8px 16px 18px}
+  header.open .links a{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+  .hero{min-height:auto;padding:0 0 56px;flex-direction:column;align-items:stretch}
+  .hero-photo{position:relative;width:100%;height:62vh;min-height:400px}
+  .hero-photo::after{background:linear-gradient(0deg,var(--bg) 2%,rgba(8,8,10,.2) 45%,rgba(8,8,10,.55) 100%)}
+  .hero-crest{top:92px;right:16px}
+  .hero-crest svg{width:56px}
+  .hero-crest .v{font-size:1.15rem}.hero-crest .c{font-size:.6rem}
+  .hero-inner{margin-top:-90px}
+  .split,.time{grid-template-columns:1fr}
+  .seguro .media,.time .media{clip-path:none;margin:0;min-height:380px}
+  .time .media{order:-1}
+  .time .media::after{background:linear-gradient(0deg,var(--bg) 0%,transparent 40%)}
+  .seguro .media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,transparent 40%)}
+  .seguro .body,.time .body{padding:36px 16px 56px}
+  .sobre{padding:70px 0}
+  .sobre .grid{grid-template-columns:1fr;gap:36px}
+  .sobre .photo{max-width:440px}
+  .card{flex-basis:100%}
+  .arrow{display:none}
+  .final{min-height:auto}
+  .final::after{background:linear-gradient(0deg,rgba(8,8,10,.95) 30%,rgba(8,8,10,.35) 100%)}
+  .final .box{padding:240px 0 60px}
+}
+@media (max-width:480px){
+  .ctas .btn{width:100%;justify-content:center}
+  .pillars{gap:18px}
+  .brand b{font-size:1.05rem}
+  .mono{width:42px;height:42px}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.8 4.5 5.6v6c0 4.7 3.2 8.3 7.5 9.6 4.3-1.3 7.5-4.9 7.5-9.6v-6L12 2.8Z"/><path d="m8.6 12 2.3 2.3 4.6-4.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 2.5 4.3 5.4v6.2c0 4.8 3.3 8.5 7.7 9.9 4.4-1.4 7.7-5.1 7.7-9.9V5.4L12 2.5Z"/><path d="M12 15.6s-3.6-2.2-3.6-4.6a2 2 0 0 1 3.6-1.2 2 2 0 0 1 3.6 1.2c0 2.4-3.6 4.6-3.6 4.6Z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c.6-3.4 3.2-5.3 6.5-5.3s5.9 1.9 6.5 5.3"/><circle cx="5" cy="9.5" r="2.2"/><circle cx="19" cy="9.5" r="2.2"/><path d="M1.5 17.5c.3-2 1.6-3.2 3.3-3.4M22.5 17.5c-.3-2-1.6-3.2-3.3-3.4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20v-4M8.5 20v-7M13 20V11M17.5 20V7"/><path d="m3.5 11 5-4.5 4 3L20 3.5M16 3.5h4v4"/></symbol>
+    <symbol id="i-inf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 12c-2-2.6-3.6-4-5.6-4a4 4 0 0 0 0 8c2 0 3.6-1.4 5.6-4Zm0 0c2 2.6 3.6 4 5.6 4a4 4 0 0 0 0-8c-2 0-3.6 1.4-5.6 4Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="m7.8 12.3 2.8 2.8 5.8-6"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10.5" rx="1.2"/><path d="M2 19h20" stroke-linecap="round"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="m12 4 10 5-10 5L2 9l10-5Z"/><path d="M6 11v4.5c0 1.4 2.7 3 6 3s6-1.6 6-3V11M22 9v5" stroke-linecap="round"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6.5 4h11L22 9.5 12 21 2 9.5 6.5 4Z"/><path d="M2 9.5h20M9 4l-1.5 5.5L12 21l4.5-11.5L15 4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Cauã Botelho, início">
+      <svg class="mono" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9d4ca"/></linearGradient></defs><path d="M24 6a18 18 0 1 0 0 36" fill="none" stroke="url(#mg)" stroke-width="4.4" stroke-linecap="round"/><path d="M24 15a9 9 0 1 0 0 18h0" fill="none" stroke="url(#mg)" stroke-width="4.4" stroke-linecap="round"/><path d="M24 6h4a9 9 0 0 1 0 18h-4M24 24h6a9 9 0 0 1 0 18h-6" fill="none" stroke="url(#mg)" stroke-width="4.4" stroke-linecap="round"/></svg>
+      <span><b>CAUÃ BOTELHO</b><small>Seguro de Vida &amp; Carreira</small></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#inicio" class="active">Início</a>
+      <a href="#seguro">Seguro de Vida</a>
+      <a href="#time">Faça Parte</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-line" href="https://ig.me/m/cauabotelho_1" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Fale Comigo</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-photo"><img src="assets/lounge.jpg" alt="Cauã Botelho de blazer branco" fetchpriority="high"></div>
+    <div class="hero-crest" aria-label="Vantage Capital">
+      <svg viewBox="0 0 80 88" fill="none" aria-hidden="true"><path d="M40 3 6 15v26c0 21 14.5 37 34 44 19.5-7 34-23 34-44V15L40 3Z" stroke="#d9d4ca" stroke-width="2.4"/><path d="M40 10 12 20v21c0 17.6 12 31 28 37 16-6 28-19.4 28-37V20L40 10Z" stroke="#e8b84a" stroke-width="1.2" opacity=".7"/><path d="M40 26c-8 0-14 6-14 14 0 6 3 10 6 13l-2 9 10-4 10 4-2-9c3-3 6-7 6-13 0-8-6-14-14-14Z" fill="#d9d4ca" opacity=".9"/><path d="M34 40h3M43 40h3M37 49c2 1.5 4 1.5 6 0" stroke="#08080a" stroke-width="2" stroke-linecap="round"/><path d="M26 30c-4-1-7 2-8 6M54 30c4-1 7 2 8 6M24 42c-4 2-5 6-4 10M56 42c4 2 5 6 4 10" stroke="#d9d4ca" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <div class="v">VANTAGE</div>
+      <div class="c">CAPITAL</div>
+    </div>
+    <div class="wrap">
+      <div class="hero-inner rv">
+        <div class="kicker white">Proteção financeira<span class="dot">•</span>Renda extra<span class="dot">•</span>Liberdade</div>
+        <h1>Proteja o que você mais ama e <span class="gold">construa a vida que você merece.</span></h1>
+        <p class="lead">Eu ajudo famílias a se protegerem com Seguro de Vida e ainda mostro como você pode trabalhar comigo, construir sua própria renda e conquistar liberdade financeira.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="#seguro"><svg><use href="#i-shield"/></svg>Quero um Seguro de Vida</a>
+          <a class="btn btn-ghost" href="#time"><svg><use href="#i-team"/></svg>Quero Fazer Parte do Time</a>
+        </div>
+        <div class="pillars">
+          <div class="pillar"><svg><use href="#i-shield"/></svg><span>Proteção<br>para sua família</span></div>
+          <div class="pillar"><svg><use href="#i-chart"/></svg><span>Renda e<br>crescimento</span></div>
+          <div class="pillar"><svg><use href="#i-inf"/></svg><span>Liberdade de<br>trabalhar para você</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGURO -->
+  <section class="split seguro" id="seguro">
+    <div class="media"><img src="assets/jet.jpg" alt="Cauã caminhando ao lado de um jatinho" loading="lazy"></div>
+    <div class="body rv">
+      <div>
+        <div class="kicker">Seguro de Vida</div>
+        <h2>Segurança hoje,<br>tranquilidade sempre.</h2>
+        <p>O Seguro de Vida garante proteção financeira para você e sua família, em qualquer cenário.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg>Proteção para quem você ama</li>
+          <li><svg><use href="#i-check"/></svg>Suporte em momentos difíceis</li>
+          <li><svg><use href="#i-check"/></svg>Planejamento e estabilidade financeira</li>
+          <li><svg><use href="#i-check"/></svg>Opções personalizadas para sua realidade</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <svg><use href="#i-shield-heart"/></svg>
+        <h3>Proteja o seu maior patrimônio: a sua família.</h3>
+        <a class="btn btn-gold" href="https://bit.ly/Consultoria1GRATUITA" target="_blank" rel="noopener">Simular meu Seguro <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME -->
+  <section class="split time" id="time">
+    <div class="body rv">
+      <div class="intro">
+        <div class="kicker">Faça parte do meu time</div>
+        <h2>Trabalhe comigo, construa sua renda e <span class="gold">mude de vida.</span></h2>
+        <p>Eu recruto e mentoro pessoas que querem mais: mais renda, mais liberdade e a chance de construir um futuro diferente, trabalhando de forma independente no mercado de Seguros de Vida.</p>
+        <a class="btn btn-gold" href="https://bit.ly/Consultoria1GRATUITA" target="_blank" rel="noopener"><svg><use href="#i-team"/></svg>Quero Fazer Parte do Time <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="feats">
+        <div class="feat"><svg><use href="#i-chart"/></svg><span>Ganhos por performance<small>(sem limite de renda)</small></span></div>
+        <div class="feat"><svg><use href="#i-laptop"/></svg><span>Trabalho flexível<small>de onde você estiver</small></span></div>
+        <div class="feat"><svg><use href="#i-cap"/></svg><span>Treinamento e mentoria<small>completa, do zero</small></span></div>
+        <div class="feat"><svg><use href="#i-gem"/></svg><span>Plano de carreira<small>e crescimento real</small></span></div>
+      </div>
+    </div>
+    <div class="media"><img src="assets/pier.jpg" alt="Cauã na praia" loading="lazy"></div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="wrap grid">
+      <div class="photo rv"><img src="assets/phone.jpg" alt="Cauã Botelho ao telefone" loading="lazy"><div class="tag"><b>Cauã Botelho</b> · CEO Vantage Capital</div></div>
+      <div class="rv">
+        <div class="kicker">Sobre mim</div>
+        <h2>Jovem, faminto e do lado de <span class="gold">quem quer mais.</span></h2>
+        <p>Sou o Cauã, CEO da Vantage Capital. Comecei do zero no mercado de Seguro de Vida e descobri um negócio que protege famílias e, ao mesmo tempo, transforma a vida de quem trabalha nele.</p>
+        <p>Hoje lidero um time de sócios que construíram a própria renda com treinamento, mentoria e um plano claro. Se você quer proteger sua família ou mudar de vida, é só falar comigo.</p>
+        <div class="stats">
+          <div class="stat"><b class="gold">+100</b><span>sócios no time</span></div>
+          <div class="stat"><b class="gold">1:1</b><span>consultoria gratuita</span></div>
+          <div class="stat"><b class="gold">0</b><span>experiência exigida</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <!-- ATENÇÃO: depoimentos abaixo são exemplos do mockup. Troque por depoimentos reais (nome + texto autorizados) antes de publicar. -->
+  <section class="resultados" id="resultados">
+    <div class="wrap">
+      <h2 class="rv">Resultados <span class="gold">Reais</span></h2>
+      <p class="sub rv">Pessoas comuns que aceitaram o desafio e hoje constroem uma nova realidade.</p>
+      <div class="carousel">
+        <button class="arrow" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="track-wrap"><div class="track" id="track">
+          <article class="card"><div class="who"><div class="avatar">LM</div><div><b>Lucas M.</b><div class="stars">★★★★★</div></div></div><p>“Entrei sem experiência e hoje tenho uma renda que nunca imaginei. O suporte do Cauã faz toda a diferença.”</p></article>
+          <article class="card"><div class="who"><div class="avatar">MS</div><div><b>Mariana S.</b><div class="stars">★★★★★</div></div></div><p>“Consegui conciliar meu tempo, trabalhar de casa e ainda dar mais segurança para a minha família.”</p></article>
+          <article class="card"><div class="who"><div class="avatar">RT</div><div><b>Rafael T.</b><div class="stars">★★★★★</div></div></div><p>“Mais do que vendas, é um modelo de negócio que realmente muda vidas. Recomendo de olhos fechados!”</p></article>
+          <article class="card"><div class="who"><div class="avatar">JP</div><div><b>Juliana P.</b><div class="stars">★★★★★</div></div></div><p>“Fiz o seguro da minha família com o Cauã. Atendimento claro, sem enrolação, e hoje durmo tranquila.”</p></article>
+          <article class="card"><div class="who"><div class="avatar">GA</div><div><b>Gabriel A.</b><div class="stars">★★★★★</div></div></div><p>“Saí do 5x2 e hoje faço minha própria agenda. O treinamento me deu o caminho, eu só precisei executar.”</p></article>
+          <article class="card"><div class="who"><div class="avatar">CF</div><div><b>Camila F.</b><div class="stars">★★★★★</div></div></div><p>“Nunca tinha vendido nada. Com a mentoria do time, fechei minhas primeiras apólices no primeiro mês.”</p></article>
+        </div></div>
+        <button class="arrow" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="contato">
+    <img src="assets/familia.jpg" alt="Família caminhando na praia ao pôr do sol" loading="lazy">
+    <div class="wrap">
+      <div class="box rv">
+        <h2>A pergunta é simples:<br>Você vai continuar no mesmo lugar ou vai <span class="gold">construir a vida que sempre quis?</span></h2>
+        <div class="ctas" style="margin-bottom:0">
+          <a class="btn btn-gold" href="https://bit.ly/Consultoria1GRATUITA" target="_blank" rel="noopener"><svg><use href="#i-shield"/></svg>Quero um Seguro de Vida</a>
+          <a class="btn btn-ghost" href="https://bit.ly/Consultoria1GRATUITA" target="_blank" rel="noopener"><svg><use href="#i-team"/></svg>Quero Fazer Parte do Time</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#inicio"><span><b>CAUÃ BOTELHO</b><small>Seguro de Vida &amp; Carreira · Vantage Capital</small></span></a>
+      <nav aria-label="Rodapé"><a href="#seguro">Seguro de Vida</a><a href="#time">Faça Parte</a><a href="#resultados">Resultados</a><a href="#sobre">Sobre</a><a href="https://www.instagram.com/cauabotelho_1/" target="_blank" rel="noopener">Instagram</a></nav>
+    </div>
+    <p class="copy">© 2026 Cauã Botelho · Vantage Capital. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://ig.me/m/cauabotelho_1" target="_blank" rel="noopener" aria-label="Fale comigo"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+(() => {
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 30);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  const btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', () => {
+    const open = header.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => {
+    header.classList.remove('open'); btn.setAttribute('aria-expanded', false);
+  }));
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.15});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // active nav link
+  const links = [...document.querySelectorAll('#links a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  const nio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  }), {rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s => s && nio.observe(s));
+
+  // carousel
+  const track = document.getElementById('track'), dotsEl = document.getElementById('dots');
+  const cards = track.children; let page = 0, timer;
+  const perView = () => innerWidth <= 860 ? 1 : innerWidth <= 1080 ? 2 : 3;
+  const pages = () => Math.ceil(cards.length / perView());
+  function render() {
+    const pv = perView(), n = pages(); page = Math.min(page, n - 1);
+    const first = cards[Math.min(page * pv, cards.length - pv)];
+    track.style.transform = `translateX(${-first.offsetLeft}px)`;
+    if (dotsEl.children.length !== n) {
+      dotsEl.innerHTML = '';
+      for (let i = 0; i < n; i++) { const d = document.createElement('button'); d.setAttribute('aria-label', 'Página ' + (i + 1)); d.onclick = () => go(i); dotsEl.appendChild(d); }
+    }
+    [...dotsEl.children].forEach((d, i) => d.classList.toggle('on', i === page));
+  }
+  function go(i) { page = (i + pages()) % pages(); render(); restart(); }
+  function restart() { clearInterval(timer); timer = setInterval(() => go(page + 1), 6000); }
+  document.getElementById('prev').onclick = () => go(page - 1);
+  document.getElementById('next').onclick = () => go(page + 1);
+  let sx = 0;
+  track.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+  track.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(page + (dx < 0 ? 1 : -1)); });
+  addEventListener('resize', render); render(); restart();
+})();
+</script>
+</body>
+</html>
